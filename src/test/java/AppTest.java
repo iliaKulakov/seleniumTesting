@@ -83,11 +83,13 @@ public class AppTest {
 
     }
 
+
+
     public static void main(String[] args) throws Exception{
-        AppTest test = new AppTest();
-        test.setUp();
-        test.testSuccesSearch();
-        test.tearDown();
+       // AppTest test = new AppTest();
+       // test.setUp();
+       // test.testSuccesSearch();
+       // test.tearDown();
     }
 
 
