@@ -15,6 +15,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import static org.junit.Assert.assertNotNull;
 
 public class AppTest {
+
     @Test public void testAppHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
@@ -26,9 +27,13 @@ public class AppTest {
     @Before
     public void setUp() throws Exception {
 // Выбор хрома как драйвера
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 // Конфигурация хрома. И пример запуска в headles режиме
         ChromeOptions options = new ChromeOptions();
+
+        options.setBinary("C:/Program Files (x86)/Google/Chrome/Application/chrome.exe");
+        ChromeDriver browser = new ChromeDriver(options);
+
         options.setHeadless(true);
 // Создание инстанса браузера
         driver = new ChromeDriver(options);
@@ -79,11 +84,13 @@ public class AppTest {
 
     }
 
+
+
     public static void main(String[] args) throws Exception{
-        AppTest test = new AppTest();
-        test.setUp();
-        test.testSuccesSearch();
-        test.tearDown();
+       // AppTest test = new AppTest();
+       // test.setUp();
+       // test.testSuccesSearch();
+       // test.tearDown();
     }
 
 
