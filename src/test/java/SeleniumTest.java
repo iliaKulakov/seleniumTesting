@@ -20,10 +20,11 @@ public class SeleniumTest {
         // TODO Auto-generated method stub
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Angron\\Downloads\\chromedriver.exe"); // path of chromedriver
         WebDriver driver = new ChromeDriver();
-
-        driver.get("https://google.com");
-        driver.manage().window().maximize();
-        driver.getTitle();
+        driver.get("http://qa.sedmax.ru/");
+        driver.findElement(By.id("LoginForm_account")).sendKeys("test");
+        driver.findElement(By.id("LoginForm_password")).sendKeys("test");
+        //не получается подобрать локатор, чтобы нажимать кнопку войти
+        WebElement element= driver.findElement(By.ByXPath("//input[@value='Войти'][@title='Войти']")).click();
 
 
     }
