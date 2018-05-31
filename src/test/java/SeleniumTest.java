@@ -18,13 +18,14 @@ public class SeleniumTest {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Angron\\Downloads\\chromedriver.exe"); // path of chromedriver
+//        System.setProperty("webdriver.chrome.driver", "/home/rmuhamedgaliev/Downloads/chromedriver"); // path of chromedriver
         WebDriver driver = new ChromeDriver();
         driver.get("http://qa.sedmax.ru/");
         driver.findElement(By.id("LoginForm_account")).sendKeys("test");
         driver.findElement(By.id("LoginForm_password")).sendKeys("test");
         //не получается подобрать локатор, чтобы нажимать кнопку войти
-        WebElement element= driver.findElement(By.ByXPath("//input[@value='Войти'][@title='Войти']")).click();
+        WebElement enterButton= driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[4]/button"));
+        enterButton.click();
 
 
     }
