@@ -27,16 +27,16 @@ public class AppTest {
     @Before
     public void setUp() throws Exception {
 // Выбор хрома как драйвера
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+    //    System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 // Конфигурация хрома. И пример запуска в headles режиме
-        ChromeOptions options = new ChromeOptions();
+   //     ChromeOptions options = new ChromeOptions();
 
-        options.setBinary("C:/Program Files (x86)/Google/Chrome/Application/chrome.exe");
-        ChromeDriver browser = new ChromeDriver(options);
+     //   options.setBinary("C:/Program Files (x86)/Google/Chrome/Application/chrome.exe");
+     //   ChromeDriver browser = new ChromeDriver(options);
 
-        options.setHeadless(true);
+     //   options.setHeadless(true);
 // Создание инстанса браузера
-        driver = new ChromeDriver(options);
+      ///  driver = new ChromeDriver(options);
     }
 
     // Завершение работы теста
