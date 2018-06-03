@@ -37,10 +37,20 @@ public class SeleniumTest {
         //Проверка элементов на странице отчетов
         boolean present;
         try {
-
+            //"добавить отчет"
             driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/div[2]/div/a/button"));
+            //удалить выбранное
+            driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/div[2]/div/button"));
+            //чек-бокс существует
+            driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr[1]/td[1]/div/label"));
+            //проверка что ссылка на 1 отчет существует
+            driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr[1]/td[3]/div/a"));
+            //проверка кнопки "Редактировать" и копировать
+            driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr[1]/td[6]/div/a/button"));
+            driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr[1]/td[6]/div/button"));
             present = true;
-            System.out.println("Элемент существует");
+            System.out.println("Элементы существуют");
+
         } catch (NoSuchElementException e) {
             present = false;
         }
