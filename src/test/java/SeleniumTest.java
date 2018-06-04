@@ -17,10 +17,8 @@ public class SeleniumTest extends WebDriverInstance{
     }
 
     public static void main(String[] args) throws Exception {
-        WebDriverInstance singleton = WebDriverInstance.getInstance();
 
-
-
+        WebDriver driverInstance = WebDriverInstance.getInfo();
 
 
         // TODO Auto-generated method stub
@@ -31,12 +29,12 @@ public class SeleniumTest extends WebDriverInstance{
         driver.findElement(By.id("LoginForm_password")).sendKeys("test");
         WebElement enterButton= driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[4]/button"));
         enterButton.click();*/
-
-         WebElement enterButton1 = driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul/li[3]/a"));
+         WebDriverInstance singleton = WebDriverInstance.getInstance();
+         WebElement enterButton1 = driverInstance.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul/li[3]/a"));
          enterButton1.click();
-         WebElement enterButton2 = driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul/li[3]/ul"));
+         WebElement enterButton2 = driverInstance.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul/li[3]/ul"));
          enterButton2.click();
-        //Проверка элементов на странице отчетов
+       /* //Проверка элементов на странице отчетов
         boolean present;
         try {
             //"добавить отчет"
