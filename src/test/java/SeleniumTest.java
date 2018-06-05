@@ -18,8 +18,7 @@ public class SeleniumTest extends WebDriverInstance{
 
     public static void main(String[] args) throws Exception {
 
-        WebDriver driverInstance = WebDriverInstance.getInfo();
-
+       WebDriver singleton = WebDriverInstance.getInstance();
 
         // TODO Auto-generated method stub
        /* System.setProperty("webdriver.chrome.driver", "C:/Users/Angron/Downloads/chromedriver.exe"); // path of chromedriver
@@ -29,25 +28,25 @@ public class SeleniumTest extends WebDriverInstance{
         driver.findElement(By.id("LoginForm_password")).sendKeys("test");
         WebElement enterButton= driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[4]/button"));
         enterButton.click();*/
-         WebDriverInstance singleton = WebDriverInstance.getInstance();
-         WebElement enterButton1 = driverInstance.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul/li[3]/a"));
+
+         WebElement enterButton1 = singleton.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul/li[3]/a"));
          enterButton1.click();
-         WebElement enterButton2 = driverInstance.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul/li[3]/ul"));
+         WebElement enterButton2 = singleton.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul/li[3]/ul"));
          enterButton2.click();
-       /* //Проверка элементов на странице отчетов
+        //Проверка элементов на странице отчетов
         boolean present;
         try {
             //"добавить отчет"
-            driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/div[2]/div/a/button"));
+            singleton.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/div[2]/div/a/button"));
             //удалить выбранное
-            driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/div[2]/div/button"));
+            singleton.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/div[2]/div/button"));
             //чек-бокс существует
-            driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr[1]/td[1]/div/label"));
+            singleton.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr[1]/td[1]/div/label"));
             //проверка что ссылка на 1 отчет существует
-            driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr[1]/td[3]/div/a"));
+            singleton.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr[1]/td[3]/div/a"));
             //проверка кнопки "Редактировать" и копировать
-            driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr[1]/td[6]/div/a/button"));
-            driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr[1]/td[6]/div/button"));
+            singleton.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr[1]/td[6]/div/a/button"));
+            singleton.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[1]/div[2]/table/tbody/tr[1]/td[6]/div/button"));
             present = true;
             System.out.println("Элементы существуют");
 
@@ -55,7 +54,7 @@ public class SeleniumTest extends WebDriverInstance{
             present = false;
         }
 
-*/
+
 
 
     }

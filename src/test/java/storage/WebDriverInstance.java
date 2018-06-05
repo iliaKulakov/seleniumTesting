@@ -14,28 +14,23 @@ import static org.junit.Assert.assertNotNull;
 
 public class WebDriverInstance {
 
+        private static WebDriver instance;
 
-        private static WebDriverInstance instance;
+        public static synchronized WebDriver getInstance() {
+            System.setProperty("webdriver.chrome.driver", "C:/Users/Angron/Downloads/chromedriver.exe"); // path of chromedriver
+            instance = new ChromeDriver();
 
-        public static synchronized WebDriverInstance getInstance() {
-            getInfo().get("http://qa.sedmax.ru/");
-            getInfo().findElement(By.id("LoginForm_account")).sendKeys("test");
-            getInfo().findElement(By.id("LoginForm_password")).sendKeys("test");
-            WebElement enterButton = getInfo().findElement(By.xpath("//*[@id=\"login-form\"]/div[4]/button"));
+           instance.get("http://qa.sedmax.ru/");
+           instance.findElement(By.id("LoginForm_account")).sendKeys("test");
+           instance.findElement(By.id("LoginForm_password")).sendKeys("test");
+            WebElement enterButton = instance.findElement(By.xpath("//*[@id=\"login-form\"]/div[4]/button"));
             enterButton.click();
 
             if (instance == null) {
-                instance = new WebDriverInstance();
+                instance = new ChromeDriver();
             }
             return instance;
         }
-
-        public static WebDriver getInfo(){
-            System.setProperty("webdriver.chrome.driver", "C:/Users/Angron/Downloads/chromedriver.exe"); // path of chromedriver
-            WebDriver driver = new ChromeDriver();
-            return driver;
-        }
-
 
 }
 
