@@ -1,0 +1,17 @@
+package testData;
+
+public class User {
+
+        public String login;
+        public String password;
+        public String passwordConfirmation;
+
+        public static User createValidUser() {
+            User user = new User();
+            user.login = "test";
+            user.password = "test";
+            user.passwordConfirmation = user.password;
+            return user;
+        }
+    }
+
