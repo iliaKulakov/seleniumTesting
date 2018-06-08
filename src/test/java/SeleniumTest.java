@@ -18,7 +18,8 @@ public class SeleniumTest extends WebDriverInstance{
 
     public static void main(String[] args) throws Exception {
 
-       WebDriver singleton = WebDriverInstance.getInstance();
+
+       //WebDriver singleton = WebDriverInstance.getInstance();
 
         // TODO Auto-generated method stub
        /* System.setProperty("webdriver.chrome.driver", "C:/Users/Angron/Downloads/chromedriver.exe"); // path of chromedriver
@@ -28,7 +29,7 @@ public class SeleniumTest extends WebDriverInstance{
         driver.findElement(By.id("LoginForm_password")).sendKeys("test");
         WebElement enterButton= driver.findElement(By.xpath("//*[@id=\"login-form\"]/div[4]/button"));
         enterButton.click();*/
-
+/*
          WebElement enterButton1 = singleton.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul/li[3]/a"));
          enterButton1.click();
          WebElement enterButton2 = singleton.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul/li[3]/ul"));
@@ -54,7 +55,7 @@ public class SeleniumTest extends WebDriverInstance{
             present = false;
         }
 
-
+*/
 
 
     }
