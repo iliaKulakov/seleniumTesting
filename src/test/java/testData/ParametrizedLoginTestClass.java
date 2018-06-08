@@ -15,6 +15,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import static testData.User.createValidUser;
+
 public class ParametrizedLoginTestClass {
 
     public static WebDriver driver;
@@ -23,11 +25,11 @@ public class ParametrizedLoginTestClass {
 
     @Test
     public void registerUserErrorsTest() {
+
+        user= createValidUser();
         driver.get("http://qa.sedmax.ru/");
         RegistrationPage registrationPage = new RegistrationPage(driver);
-        User user = new User();
         registrationPage.registerUser(user);
-       // registrationPage.checkErrorMessage(errorMessage);
         System.out.println("Отработал параметризированный класс");
 
     }
@@ -49,7 +51,7 @@ public class ParametrizedLoginTestClass {
          ParametrizedLoginTestClass test = new ParametrizedLoginTestClass();
          test.setUp();
          test.registerUserErrorsTest();
-         test.tearDown();
+         //test.tearDown();
     }
 
 

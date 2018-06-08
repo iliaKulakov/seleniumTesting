@@ -33,7 +33,7 @@ public class RegistrationPage {
     public void registerUser(User user) {
         login.sendKeys(user.login);
         password.sendKeys(user.password);
-        //bSubmitRegister.click();
+        bSubmitRegister.click();
 
     }
 
