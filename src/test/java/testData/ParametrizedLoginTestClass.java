@@ -41,7 +41,7 @@ public class ParametrizedLoginTestClass {
 
     public ParametrizedLoginTestClass(User user /*, String errorMessage*/) {
         this.user = user;
-     //   this.errorMessage = errorMessage;
+        //this.errorMessage = errorMessage;
     }
 
     @Test
@@ -49,8 +49,8 @@ public class ParametrizedLoginTestClass {
         user= createValidUser();
         driver.get("http://qa.sedmax.ru/");
         RegistrationPage registrationPage = new RegistrationPage(driver);
-       // registrationPage.checkErrorMessage(errorMessage);
         registrationPage.registerUser(user);
+        registrationPage.checkErrorMessage(errorMessage);
 
 
     }

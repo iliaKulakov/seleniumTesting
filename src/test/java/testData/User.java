@@ -8,7 +8,7 @@ public class User {
 
         public static User createValidUser() {
             User user = new User();
-            user.login = "test";
+            user.login = "test1";
             user.password = "test";
             user.passwordConfirmation = user.password;
             return user;
