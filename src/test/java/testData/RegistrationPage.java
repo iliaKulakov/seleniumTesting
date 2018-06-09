@@ -37,7 +37,15 @@ public class RegistrationPage {
 
     }
 
+    @FindBy(xpath = "//*[@id=\"login-form\"]/div[3]/div/div")
+    private WebElement registerError;
 
+    public void checkErrorMessage(String errorMessage) {
+        Assert.assertTrue("Error message should be present",
+                registerError.isDisplayed());
+        Assert.assertTrue("Error message should contains " + errorMessage,
+                registerError.getText().contains(errorMessage));
+    }
 
 
 }
