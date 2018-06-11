@@ -1,25 +1,19 @@
 package testData;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import org.openqa.selenium.support.PageFactory;
 import testData.User;
-
 
 public class RegistrationPage {
 
     private WebDriver driver;
 
-    public RegistrationPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        this.driver = driver;
-    }
+    @FindBy(xpath = "//*[@id=\"login-form\"]/div[3]/div/div")
+    private WebElement registerError;
 
-    //@FindBy(id = "LoginForm_account")
     @FindBy(xpath = "//*[@id=\"LoginForm_account\"]")
     private WebElement login;
 
@@ -29,16 +23,16 @@ public class RegistrationPage {
     @FindBy(xpath = "//*[@id=\"login-form\"]/div[4]/button")
     private WebElement bSubmitRegister;
 
+    public RegistrationPage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+        this.driver = driver;
+    }
 
     public void registerUser(User user) {
         login.sendKeys(user.login);
         password.sendKeys(user.password);
         bSubmitRegister.click();
-
     }
-
-    @FindBy(xpath = "//*[@id=\"login-form\"]/div[3]/div/div")
-    private WebElement registerError;
 
     public void checkErrorMessage(String errorMessage) {
         Assert.assertTrue("Error message should be present",
@@ -46,6 +40,4 @@ public class RegistrationPage {
         Assert.assertTrue("Error message should contains " + errorMessage,
                 registerError.getText().contains(errorMessage));
     }
-
-
 }

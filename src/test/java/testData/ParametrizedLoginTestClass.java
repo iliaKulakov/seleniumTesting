@@ -29,19 +29,19 @@ public class ParametrizedLoginTestClass {
         User user1 = User.createValidUser();
         user1.passwordConfirmation = "111";
 
-        User user3 = User.createValidUser();
-        user3.login = "";
+        User user2 = User.createValidUser();
+        user2.login = "";
 
         Object[][] data = new Object[][] {
-                { user1, "подтверждение пароля не совпадает" },
-                { user3, "логин не может быть пустым"}
+                { user1, "Пользователь с введенными параметрами не найден!" },
+                { user2, "Пользователь с введенными параметрами не найден!"}
         };
         return Arrays.asList(data);
     }
 
-    public ParametrizedLoginTestClass(User user /*, String errorMessage*/) {
+    public ParametrizedLoginTestClass(User user , String errorMessage) {
         this.user = user;
-        //this.errorMessage = errorMessage;
+        this.errorMessage = errorMessage;
     }
 
     @Test
@@ -51,10 +51,7 @@ public class ParametrizedLoginTestClass {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.registerUser(user);
         registrationPage.checkErrorMessage(errorMessage);
-
-
     }
-
 
     @Before
     public void setUp(){
@@ -66,13 +63,5 @@ public class ParametrizedLoginTestClass {
     public void tearDown(){
         driver.quit();
     }
-
-    public static void main(String[] args) throws Exception{
-         ParametrizedLoginTestClass test = new ParametrizedLoginTestClass(createValidUser());
-         test.setUp();
-         test.registerUserErrorsTest();
-        // test.tearDown();
-    }
-
 
 }
