@@ -12,6 +12,7 @@ import page_objects.GooglePage;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 //@RunWith(Parameterized.class)
@@ -22,10 +23,10 @@ public class GoogleSearchTest {
 
     @Before
     public void setUp() {
-        FileInputStream fis;
+        InputStream fis;
         Properties properties = new Properties();
         try {
-            fis = new FileInputStream("application.properties");
+            fis = this.getClass().getClassLoader().getResourceAsStream("application.properties");
             properties.load(fis);
         } catch (IOException e) {
             e.printStackTrace();
