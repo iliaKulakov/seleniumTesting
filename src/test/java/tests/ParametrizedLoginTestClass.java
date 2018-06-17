@@ -14,7 +14,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import page_objects.GoogleImagePage;
 import page_objects.GooglePage;
 import page_objects.User;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
@@ -33,9 +32,9 @@ public class ParametrizedLoginTestClass {
      //   this.errorMessage = errorMessage;
    // }
 
-    @Parameters
+ //   @Parameters
     //public static Collection<Object[]> data() {
-    public static void data(){
+   // public static void data(){
        /* User user1 = User.createValidUser();
         user1.passwordConfirmation = "111";
 
@@ -47,8 +46,7 @@ public class ParametrizedLoginTestClass {
                 {user2, "Пользователь с введенными параметрами не найден!"}
         };
         return Arrays.asList(data);*/
-
-    }
+   // }
 
 
 
@@ -71,8 +69,6 @@ public class ParametrizedLoginTestClass {
     public void tearDown() {
        driver.quit();
     }
-
-
 
     @Test
     public void goToGooglePage(){
