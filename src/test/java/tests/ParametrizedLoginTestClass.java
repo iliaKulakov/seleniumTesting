@@ -3,7 +3,6 @@ package tests;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
@@ -11,16 +10,14 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import testData.GooglePage;
-import testData.User;
+import page_objects.GooglePage;
+import page_objects.User;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Properties;
-
-import static testData.User.createValidUser;
 
 @RunWith(Parameterized.class)
 public class ParametrizedLoginTestClass {
@@ -92,10 +89,7 @@ public class ParametrizedLoginTestClass {
             WebElement searchLine = driver.findElement(googlePage.searchLineLocator);
             System.out.println("Тест пройден");
         } catch (NoSuchElementException e) {
-          //  return false;
         }
-        //return true;
-
         }
 
     }

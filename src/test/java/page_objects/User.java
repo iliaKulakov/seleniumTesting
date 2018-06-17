@@ -1,4 +1,4 @@
-package testData;
+package page_objects;
 
 public class User {
 
