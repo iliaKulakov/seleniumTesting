@@ -1,4 +1,4 @@
-package testData;
+package tests;
 
 import org.junit.After;
 import org.junit.Before;
@@ -7,7 +7,10 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import testData.GooglePage;
+import testData.User;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -44,14 +47,7 @@ public class ParametrizedLoginTestClass {
         return Arrays.asList(data);
     }
 
-    @Test
-    public void registerUserErrorsTest() {
-        user = createValidUser();
-        driver.get("http:google.com");
-       // RegistrationPage registrationPage = new RegistrationPage(driver);
-       // registrationPage.registerUser(user);
-       // registrationPage.checkErrorMessage(errorMessage);
-    }
+
 
     @Before
     public void setUp() {
@@ -72,5 +68,28 @@ public class ParametrizedLoginTestClass {
     public void tearDown() {
         driver.quit();
     }
+
+    @Test
+    public void registerUserErrorsTest() {
+
+        //  user = createValidUser();
+       // driver.get("http:google.com");
+       // GooglePage googlePage = new GooglePage();
+        // googlePage
+        // RegistrationPage registrationPage = new RegistrationPage(driver);
+        // registrationPage.registerUser(user);
+        // registrationPage.checkErrorMessage(errorMessage);
+    }
+
+
+    @Test
+    public void goToGooglePage(){
+        driver.get("http:google.com");
+        GooglePage googlePage = new GooglePage();
+        WebElement searchLine = driver.findElement(googlePage.searchLineLocator);
+       // googlePage.existsElement(googlePage.getSearchLine());
+    }
+
+
 
 }
