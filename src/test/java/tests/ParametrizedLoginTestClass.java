@@ -98,8 +98,12 @@ public class ParametrizedLoginTestClass {
                 WebElement screenKeyboardButton = driver.findElement(googleImagePage.screenKeyboardButton);
                 WebElement voiceSearch = driver.findElement(googleImagePage.voiceSearch);
                 WebElement searchButton = driver.findElement(googleImagePage.searchButton);
-
-
+                imageSearchButton.click();
+                WebElement loadImageButton = driver.findElement(googleImagePage.loadImageButton);
+                loadImageButton.click();
+                WebElement chooseTheFileButton = driver.findElement(googleImagePage.chooseTheFileButton);
+                WebElement closeSearchWindowButton= driver.findElement(googleImagePage.closeSearchWindowButton);
+                closeSearchWindowButton.click();
             } catch (NoSuchElementException e) {
             }
 
