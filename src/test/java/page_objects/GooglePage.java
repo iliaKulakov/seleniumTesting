@@ -12,17 +12,6 @@ public class GooglePage  {
 
 
     public static By searchLineLocator = By.xpath("//*[@id=\"lst-ib\"]");
+    public static By imageButton = By.xpath("//*[@id=\"gbw\"]/div/div/div[1]/div[2]/a");
 
-/*
-
-     boolean existsElement(String id) {
-        try {
-            getSearchLine().f
-            driver.findElement(By.id(id));
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-        return true;
-    }
-*/
 }

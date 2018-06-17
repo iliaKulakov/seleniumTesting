@@ -19,21 +19,22 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Properties;
 
-@RunWith(Parameterized.class)
+//@RunWith(Parameterized.class)
 public class ParametrizedLoginTestClass {
 
     public static WebDriver driver;
     private User user;
     private String errorMessage;
 
-    public ParametrizedLoginTestClass(User user, String errorMessage) {
-        this.user = user;
-        this.errorMessage = errorMessage;
-    }
+    //public ParametrizedLoginTestClass(User user, String errorMessage) {
+      //  this.user = user;
+     //   this.errorMessage = errorMessage;
+   // }
 
     @Parameters
-    public static Collection<Object[]> data() {
-        User user1 = User.createValidUser();
+    //public static Collection<Object[]> data() {
+    public static void data(){
+       /* User user1 = User.createValidUser();
         user1.passwordConfirmation = "111";
 
         User user2 = User.createValidUser();
@@ -43,7 +44,8 @@ public class ParametrizedLoginTestClass {
                 {user1, "Пользователь с введенными параметрами не найден!"},
                 {user2, "Пользователь с введенными параметрами не найден!"}
         };
-        return Arrays.asList(data);
+        return Arrays.asList(data);*/
+
     }
 
 
@@ -65,11 +67,11 @@ public class ParametrizedLoginTestClass {
 
     @After
     public void tearDown() {
-        driver.quit();
+       driver.quit();
     }
 
     //@Test
-    public void registerUserErrorsTest() {
+  //  public void registerUserErrorsTest() {
 
         //  user = createValidUser();
        // driver.get("http:google.com");
@@ -78,7 +80,7 @@ public class ParametrizedLoginTestClass {
         // RegistrationPage registrationPage = new RegistrationPage(driver);
         // registrationPage.registerUser(user);
         // registrationPage.checkErrorMessage(errorMessage);
-    }
+  //  }
 
 
     @Test
@@ -92,6 +94,16 @@ public class ParametrizedLoginTestClass {
         }
         }
 
+
+        @Test
+    public void checkImageButton(){
+        driver.get("http:google.com");
+        GooglePage googlePage = new GooglePage();
+        WebElement googleImage = driver.findElement(googlePage.imageButton);
+        googleImage.click();
+
+
+        }
     }
 
 
