@@ -6,10 +6,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import page_objects.GoogleImagePage;
 import page_objects.GooglePage;
 import page_objects.User;
 
@@ -70,17 +72,6 @@ public class ParametrizedLoginTestClass {
        driver.quit();
     }
 
-    //@Test
-  //  public void registerUserErrorsTest() {
-
-        //  user = createValidUser();
-       // driver.get("http:google.com");
-       // GooglePage googlePage = new GooglePage();
-        // googlePage
-        // RegistrationPage registrationPage = new RegistrationPage(driver);
-        // registrationPage.registerUser(user);
-        // registrationPage.checkErrorMessage(errorMessage);
-  //  }
 
 
     @Test
@@ -89,7 +80,6 @@ public class ParametrizedLoginTestClass {
         GooglePage googlePage = new GooglePage();
         try {
             WebElement searchLine = driver.findElement(googlePage.searchLineLocator);
-            System.out.println("Тест пройден");
         } catch (NoSuchElementException e) {
         }
         }
@@ -101,7 +91,17 @@ public class ParametrizedLoginTestClass {
         GooglePage googlePage = new GooglePage();
         WebElement googleImage = driver.findElement(googlePage.imageButton);
         googleImage.click();
+            try {
+                GoogleImagePage googleImagePage = new GoogleImagePage();
+                WebElement searchLine = driver.findElement(googleImagePage.searchImageLine);
+                WebElement imageSearchButton = driver.findElement(googleImagePage.imageSearchButton);
+                WebElement screenKeyboardButton = driver.findElement(googleImagePage.screenKeyboardButton);
+                WebElement voiceSearch = driver.findElement(googleImagePage.voiceSearch);
+                WebElement searchButton = driver.findElement(googleImagePage.searchButton);
 
+
+            } catch (NoSuchElementException e) {
+            }
 
         }
     }
