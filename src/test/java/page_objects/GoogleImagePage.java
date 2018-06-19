@@ -38,6 +38,7 @@ public class GoogleImagePage {
     @FindBy(xpath = "//*[@id=\"qbug\"]/div/a");
     private WebElement loadImageButton;
 
+
     @FindBy(xpath = "//*[@id=\"qbfile\"]");
     private WebElement chooseTheFileButton;
 
