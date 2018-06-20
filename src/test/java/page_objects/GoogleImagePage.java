@@ -9,8 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public class GoogleImagePage {
-
-
     //public static By searchImageLine = By.xpath("//*[@id=\"lst-ib\"]");
     //public static By imageSearchButton = By.xpath("//*[@id=\"qbi\"]");
     //public static By screenKeyboardButton = By.xpath("//*[@id=\"gs_ok0\"]");
@@ -20,28 +18,28 @@ public class GoogleImagePage {
     //public static By chooseTheFileButton = By.xpath("//*[@id=\"qbfile\"]");
     //public static By closeSearchWindowButton = By.xpath("//*[@id=\"qbx\"]");
 
-    @FindBy(xpath = "//*[@id=\"lst-ib\"]");
+    @FindBy(xpath = "//*[@id=\"lst-ib\"]")
     private WebElement searchImageLine;
 
-    @FindBy(xpath = "//*[@id=\"qbi\"]");
+    @FindBy(xpath = "//*[@id=\"qbi\"]")
     private WebElement imageSearchButton;
 
-    @FindBy(xpath = "//*[@id=\"gs_ok0\"]");
+    @FindBy(xpath = "//*[@id=\"gs_ok0\"]")
     private WebElement screenKeyboardButton;
 
-    @FindBy(xpath = "//*[@id=\"gs_st0\"]/a[3]");
+    @FindBy(xpath = "//*[@id=\"gs_st0\"]/a[3]")
     private WebElement voiceSearch;
 
-    @FindBy(xpath = "//*[@id=\"mKlEF\"]");
+    @FindBy(xpath = "//*[@id=\"mKlEF\"]")
     private WebElement searchButton;
 
-    @FindBy(xpath = "//*[@id=\"qbug\"]/div/a");
+    @FindBy(xpath = "//*[@id=\"qbug\"]/div/a")
     private WebElement loadImageButton;
 
-    @FindBy(xpath = "//*[@id=\"qbfile\"]");
+    @FindBy(xpath = "//*[@id=\"qbfile\"]")
     private WebElement chooseTheFileButton;
 
-    @FindBy(xpath = "//*[@id=\"qbx\"]");
+    @FindBy(xpath = "//*[@id=\"qbx\"]")
     private WebElement closeSearchWindowButton;
 
     public GoogleImagePage(WebDriver driver) {

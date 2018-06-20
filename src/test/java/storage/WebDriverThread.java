@@ -26,11 +26,12 @@ public class WebDriverThread {
                     ChromeDriver(DesiredCapabilities.chrome()); //странно, но ок для примера пока нужно
         }
         return webdriver;
+    }
 
         public void quitDriver() {
             if (null != webdriver) {
                 webdriver.quit();
-                webdriver = null;
+              //  webdriver = null;
             }
         }
 
