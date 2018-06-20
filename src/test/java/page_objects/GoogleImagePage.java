@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import storage.DriverFactory;
 
 public class GoogleImagePage {
     //public static By searchImageLine = By.xpath("//*[@id=\"lst-ib\"]");
@@ -43,7 +44,7 @@ public class GoogleImagePage {
     private WebElement closeSearchWindowButton;
 
     public GoogleImagePage(WebDriver driver) {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(DriverFactory.getDriver(),this);
     }
 
     }
