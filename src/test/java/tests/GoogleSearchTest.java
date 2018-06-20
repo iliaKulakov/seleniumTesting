@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import page_objects.GoogleImagePage;
 import page_objects.GooglePage;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -49,7 +48,6 @@ public class GoogleSearchTest {
         } catch (NoSuchElementException e) {
         }
     }
-
 
     @Test
     public void checkImageButton() {
