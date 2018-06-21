@@ -1,23 +1,44 @@
 package page_objects;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import storage.DriverFactory;
+import Factory.DriverFactory;
 
 public class GoogleImagePage {
-    //public static By searchImageLine = By.xpath("//*[@id=\"lst-ib\"]");
-    //public static By imageSearchButton = By.xpath("//*[@id=\"qbi\"]");
-    //public static By screenKeyboardButton = By.xpath("//*[@id=\"gs_ok0\"]");
-    //public static By voiceSearch = By.xpath("//*[@id=\"gs_st0\"]/a[3]");
-    //public static By searchButton = By.xpath("//*[@id=\"mKlEF\"]");
-    //public static By loadImageButton = By.xpath("//*[@id=\"qbug\"]/div/a");
-    //public static By chooseTheFileButton = By.xpath("//*[@id=\"qbfile\"]");
-    //public static By closeSearchWindowButton = By.xpath("//*[@id=\"qbx\"]");
+
+    public WebElement getSearchImageLine() {
+        return searchImageLine;
+    }
+
+    public WebElement getImageSearchButton() {
+        return imageSearchButton;
+    }
+
+    public WebElement getScreenKeyboardButton() {
+        return screenKeyboardButton;
+    }
+
+    public WebElement getVoiceSearch() {
+        return voiceSearch;
+    }
+
+    public WebElement getSearchButton() {
+        return searchButton;
+    }
+
+    public WebElement getLoadImageButton() {
+        return loadImageButton;
+    }
+
+    public WebElement getChooseTheFileButton() {
+        return chooseTheFileButton;
+    }
+
+    public WebElement getCloseSearchWindowButton() {
+        return closeSearchWindowButton;
+    }
 
     @FindBy(xpath = "//*[@id=\"lst-ib\"]")
     private WebElement searchImageLine;
@@ -43,7 +64,7 @@ public class GoogleImagePage {
     @FindBy(xpath = "//*[@id=\"qbx\"]")
     private WebElement closeSearchWindowButton;
 
-    public GoogleImagePage(WebDriver driver) {
+    public GoogleImagePage(WebDriver driver) throws Exception {
         PageFactory.initElements(DriverFactory.getDriver(),this);
     }
 

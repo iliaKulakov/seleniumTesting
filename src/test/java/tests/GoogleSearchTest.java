@@ -3,15 +3,15 @@ package tests;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import page_objects.GoogleImagePage;
 import page_objects.GooglePage;
-import storage.DriverFactory;
+import Factory.DriverFactory;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -42,29 +42,31 @@ public class GoogleSearchTest {
     }
 
     @Test
-    public void goToGooglePage() {
+    public void goToGooglePage() throws Exception {
         driver.get("http://google.com");
         GooglePage googlePage = new GooglePage(DriverFactory.getDriver());
         try {
 
-            WebElement searchLine = driver.findElement(googlePage.searchLineLocator);
+            //WebElement searchLine = driver.findElement(googlePage.searchLineLocator);
+            WebElement searchline =driver.findElement((By) googlePage.getSearchLineLocator());
+
         } catch (NoSuchElementException e) {
         }
     }
 
     @Test
-    public void checkImageButton() {
+    public void checkImageButton() throws Exception {
         driver.get("http://google.com");
-        GooglePage googlePage = new GooglePage();
-        WebElement googleImage = driver.findElement(googlePage.imageButton);
+        GooglePage googlePage = new GooglePage(DriverFactory.getDriver());
+        WebElement googleImage = driver.findElement((By) googlePage.getImageButton());
         googleImage.click();
         try {
-            GoogleImagePage googleImagePage = new GoogleImagePage();
-            WebElement imageSearchButton = driver.findElement(googleImagePage.imageSearchButton);
+            GoogleImagePage googleImagePage = new GoogleImagePage(DriverFactory.getDriver());
+            WebElement imageSearchButton = driver.findElement((By) googleImagePage.getImageSearchButton());
             imageSearchButton.click();
-            WebElement loadImageButton = driver.findElement(googleImagePage.loadImageButton);
+            WebElement loadImageButton = driver.findElement((By) googleImagePage.getLoadImageButton());
             loadImageButton.click();
-            WebElement closeSearchWindowButton = driver.findElement(googleImagePage.closeSearchWindowButton);
+            WebElement closeSearchWindowButton = driver.findElement((By) googleImagePage.getCloseSearchWindowButton());
             closeSearchWindowButton.click();
         } catch (NoSuchElementException e) {
             e.printStackTrace();
